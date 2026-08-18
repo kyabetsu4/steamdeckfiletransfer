@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-bundle_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+bundle_dir=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
 binary_source="$bundle_dir/sdft-deck"
 launcher_source="$bundle_dir/io.github.kyabetsu4.SteamDeckFileTransfer.desktop.in"
 icon_source="$bundle_dir/steam-deck-file-transfer.svg"
