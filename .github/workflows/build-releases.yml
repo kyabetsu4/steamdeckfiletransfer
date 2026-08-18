@@ -24,7 +24,11 @@ jobs:
       - name: Validate Deck shell scripts
         run: shellcheck packaging/deck/install.sh packaging/deck/uninstall.sh
       - name: Validate installer shortcut
-        run: desktop-file-validate "packaging/deck/Install Steam Deck File Transfer.desktop"
+        run: |
+          if ! output=$(desktop-file-validate "packaging/deck/Install Steam Deck File Transfer.desktop" 2>&1); then
+            echo "::error::$output"
+            exit 1
+          fi
       - name: Validate uninstaller shortcut
         run: desktop-file-validate "packaging/deck/Uninstall Steam Deck File Transfer.desktop"
       - name: Validate installed app shortcut
