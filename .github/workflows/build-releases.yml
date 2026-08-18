@@ -21,11 +21,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y desktop-file-utils libgl1-mesa-dev libwayland-dev libx11-dev libxcursor-dev libxi-dev libxkbcommon-dev libxrandr-dev shellcheck
-      - name: Validate Deck installer files
+      - name: Validate Deck shell scripts
+        run: shellcheck packaging/deck/install.sh packaging/deck/uninstall.sh
+      - name: Validate installer shortcut
+        run: desktop-file-validate "packaging/deck/Install Steam Deck File Transfer.desktop"
+      - name: Validate uninstaller shortcut
+        run: desktop-file-validate "packaging/deck/Uninstall Steam Deck File Transfer.desktop"
+      - name: Validate installed app shortcut
         run: |
-          shellcheck packaging/deck/install.sh packaging/deck/uninstall.sh
-          desktop-file-validate "packaging/deck/Install Steam Deck File Transfer.desktop"
-          desktop-file-validate "packaging/deck/Uninstall Steam Deck File Transfer.desktop"
           sed 's|@EXEC@|"/home/deck/Applications/SteamDeckFileTransfer/sdft-deck"|' packaging/deck/io.github.kyabetsu4.SteamDeckFileTransfer.desktop.in > /tmp/io.github.kyabetsu4.SteamDeckFileTransfer.desktop
           desktop-file-validate /tmp/io.github.kyabetsu4.SteamDeckFileTransfer.desktop
       - name: Test
