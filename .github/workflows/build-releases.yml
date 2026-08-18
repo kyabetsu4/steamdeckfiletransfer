@@ -14,7 +14,7 @@ jobs:
     name: Steam Deck bundle
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - name: Install Linux desktop build dependencies
@@ -50,7 +50,7 @@ jobs:
           chmod 0755 "dist/SteamDeckFileTransfer/Install Steam Deck File Transfer.desktop"
           chmod 0755 "dist/SteamDeckFileTransfer/Uninstall Steam Deck File Transfer.desktop"
           tar -C dist -czf dist/SteamDeckFileTransfer-Deck-x86_64.tar.gz SteamDeckFileTransfer
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: SteamDeckFileTransfer-Deck-x86_64
           path: dist/SteamDeckFileTransfer-Deck-x86_64.tar.gz
@@ -60,7 +60,7 @@ jobs:
     name: Windows PC bundle
     runs-on: windows-2025
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - name: Build PC sender
@@ -72,7 +72,7 @@ jobs:
           Copy-Item target/release/sdft-pc.exe dist/SteamDeckFileTransfer-PC/
           Copy-Item README.md dist/SteamDeckFileTransfer-PC/
           Compress-Archive -Path dist/SteamDeckFileTransfer-PC -DestinationPath dist/SteamDeckFileTransfer-PC-Windows-x86_64.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: SteamDeckFileTransfer-PC-Windows-x86_64
           path: dist/SteamDeckFileTransfer-PC-Windows-x86_64.zip
@@ -86,7 +86,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: dist
           merge-multiple: true
