@@ -1,0 +1,12 @@
+STEAM DECK INSTALLATION
+=======================
+
+1. Double-click "Install Steam Deck File Transfer".
+2. Choose "Execute" if SteamOS asks what to do.
+3. After installation, open the new "Steam Deck File Transfer" shortcut on
+   your Desktop and press "Start receiver".
+
+No terminal, password, developer mode, or SteamOS system changes are needed.
+
+Keep transfers on a trusted private home network. This alpha does not have
+encrypted pairing yet.

@@ -1,0 +1,13 @@
+[package]
+name = "sdft-pc"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+eframe.workspace = true
+sdft-core = { path = "../../crates/core" }
+
+[lints]
+workspace = true

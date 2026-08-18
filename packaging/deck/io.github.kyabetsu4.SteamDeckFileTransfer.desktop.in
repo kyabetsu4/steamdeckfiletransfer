@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Steam Deck File Transfer
+GenericName=File Receiver
+Comment=Receive files and folders from a PC over your local network
+Exec=@EXEC@
+Icon=steam-deck-file-transfer
+Terminal=false
+Categories=Network;FileTransfer;Utility;
+Keywords=Steam;Deck;Files;Transfer;Receive;
+StartupNotify=true

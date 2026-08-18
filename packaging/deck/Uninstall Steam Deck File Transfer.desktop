@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Uninstall Steam Deck File Transfer
+Comment=Remove the receiver and its Desktop shortcut
+Exec=sh -c "exec sh \\\"\\$(dirname \\\"\\$1\\\")/uninstall.sh\\\"" uninstaller %k
+Icon=edit-delete
+Terminal=false
+Categories=Network;Utility;
